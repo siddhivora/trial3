@@ -86,7 +86,7 @@ describe('Test UAT::', () => {
 
     });
 
-    it('Assessment Flow: Generate Quote for Demo Dealer 4 Estimation Dealer (Validation not required)', async () => {
+    it.only('Assessment Flow: Generate Quote for Demo Dealer 4 Estimation Dealer (Validation not required)', async () => {
         await UAT_Page.navigateToAssessmentQuotePage();        
         
         //Fill vehicle and customer details
@@ -139,7 +139,7 @@ describe('Test UAT::', () => {
        
     });
 
-    it.only("Validate Search Page Estimate Quotes Count", async () => {
+    it("Validate Search Page Estimate Quotes Count", async () => {
         await search_Page.openSearchPage();
         await search_Page.compareQuoteCountWithDB(await search_Page.estimateCount.getText(), await search_Page.paginationQuoteCount.getText());
     })
