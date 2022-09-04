@@ -32,6 +32,7 @@ describe('Test UAT::', () => {
         await UAT_Page.navigateToAssessmentQuotePage();        
         
         //Fill vehicle and customer details
+        await input_Page.resetB.scrollIntoView();
         await input_Page.resetB.waitForDisplayed({ timeout: 15000 });
         await input_Page.tickI.click();
         await UAT_Page.waitForDisplayedAndClick(input_Page.dealerOtlUat);
@@ -86,7 +87,7 @@ describe('Test UAT::', () => {
 
     });
 
-    it.only('Assessment Flow: Generate Quote for Demo Dealer 4 Estimation Dealer (Validation not required)', async () => {
+    it('Assessment Flow: Generate Quote for Demo Dealer 4 Estimation Dealer (Validation not required)', async () => {
         await UAT_Page.navigateToAssessmentQuotePage();        
         
         //Fill vehicle and customer details
@@ -214,7 +215,7 @@ describe('Test UAT::', () => {
        
     });
 
-    it('Generate Quote for Demo Dealer 4 Estimation Dealer and Generic Model:', async () => {
+    it.only('Generate Quote for Demo Dealer 4 Estimation Dealer and Generic Model:', async () => {
         //allureReporter.addFeature('Quote Generation');
         //allureReporter.addSeverity('Critical')
 
@@ -229,6 +230,7 @@ describe('Test UAT::', () => {
         await UAT_Page.waitForDisplayedAndClick(input_Page.paintDD);
         await UAT_Page.waitForDisplayedAndClick(input_Page.paintDDMetallic);
         await UAT_Page.waitForDisplayedAndSetValue(input_Page.regNoD1, "autotestlease27062022generic");
+        await input_Page.radioButtonBefore.click();
 
         //await input_Page.name.setValue("Siddhi");
         //await input_Page.email.setValue("abcdef");
