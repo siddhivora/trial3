@@ -87,17 +87,17 @@ describe('Test UAT::', () => {
 
     });
 
-    it('Assessment Flow: Generate Quote for Demo Dealer 4 Estimation Dealer (Validation not required)', async () => {
+    it.skip('Assessment Flow: Generate Quote for Automation Testing Demo Dealer (Validation not required)', async () => {
         await UAT_Page.navigateToAssessmentQuotePage();        
         
         //Fill vehicle and customer details
         await input_Page.resetB.waitForDisplayed({ timeout: 15000 });
         await input_Page.tickI.click();
-        await UAT_Page.waitForDisplayedAndClick(input_Page.dealerDemoDealerUat);
+        await UAT_Page.waitForDisplayedAndClick(input_Page.dealerDemoDealer);
         await UAT_Page.waitForDisplayedAndClick(input_Page.makeModelDD);
         await UAT_Page.waitForDisplayedAndClick(input_Page.makeModelDDAnyMakeAnyModel);
-        await UAT_Page.waitForDisplayedAndClick(input_Page.paintDD);
-        await UAT_Page.waitForDisplayedAndClick(input_Page.paintDDMetallic);
+        //await UAT_Page.waitForDisplayedAndClick(input_Page.paintDD);
+        //await UAT_Page.waitForDisplayedAndClick(input_Page.paintDDMetallic);
         await UAT_Page.waitForDisplayedAndSetValue(input_Page.regNoD1, "autotestlease23082022generic");
 
         await input_Page.name.setValue("Siddhi");
@@ -215,7 +215,7 @@ describe('Test UAT::', () => {
        
     });
 
-    it.only('Generate Quote for Demo Dealer 4 Estimation Dealer and Generic Model:', async () => {
+    it.only('Generate Quote for Automation Testing Demo Dealer and Generic Model:', async () => {
         //allureReporter.addFeature('Quote Generation');
         //allureReporter.addSeverity('Critical')
 
@@ -224,13 +224,10 @@ describe('Test UAT::', () => {
         //Fill vehicle and customer details
         await input_Page.resetB.waitForDisplayed({ timeout: 15000 });
         await input_Page.tickI.click();
-        await UAT_Page.waitForDisplayedAndClick(input_Page.dealerDemoDealer4Estimation);
+        await UAT_Page.waitForDisplayedAndClick(input_Page.dealerDemoDealer);
         await UAT_Page.waitForDisplayedAndClick(input_Page.makeModelDD);
         await UAT_Page.waitForDisplayedAndClick(input_Page.makeModelDDAnyMakeAnyModel);
-        await UAT_Page.waitForDisplayedAndClick(input_Page.paintDD);
-        await UAT_Page.waitForDisplayedAndClick(input_Page.paintDDMetallic);
         await UAT_Page.waitForDisplayedAndSetValue(input_Page.regNoD1, "autotestlease27062022generic");
-        await input_Page.radioButtonBefore.click();
 
         //await input_Page.name.setValue("Siddhi");
         //await input_Page.email.setValue("abcdef");
@@ -242,6 +239,8 @@ describe('Test UAT::', () => {
         
         //upload images
         await details_Page.genericImageUpload();
+        await details_Page.inspectionChecklistUploadMoreImageB.waitForDisplayed({ timeout: 60000});
+        await details_Page.inspectionChecklistUploadMoreImageB.click();
         //wait until analsis completes
         await details_Page.statusBar.waitForDisplayed({ timeout: 360000 });    
         global.quoteUrl = await browser.getUrl(); 
@@ -320,13 +319,13 @@ describe('Test UAT::', () => {
         await details_Page.validateRepairEstimateByPaintFunctionality();
     });
     
-    it('should create Fleet before quote for Demo Dealer 2 Fleet B/A Dealer:', async () => {
+    it.skip('should create Fleet before quote for Automation Testing Fleet B/A Dealer:', async () => {
         await UAT_Page.navigateToInputQuotePage();        
          
         //Fill vehicle and customer details
         await input_Page.resetB.waitForDisplayed({ timeout: 15000 });
         await input_Page.tickI.click();
-        await input_Page.dealerDemoDealer2FleetBA.click();
+        await input_Page.dealerFleetBA.click();
         await input_Page.makeModelDD.click();
         await input_Page.makeModelDDVanAnyModel.click();
         await input_Page.regNo1.click();
@@ -356,13 +355,13 @@ describe('Test UAT::', () => {
         console.log("Before Quote URL:: ", await browser.getUrl());
     });
 
-    it('should create Fleet After quote for Demo Dealer 2 Fleet B/A Dealer:', async () => {
+    it.skip('should create Fleet After quote for Automation Testing Fleet B/A Dealer:', async () => {
         await UAT_Page.navigateToInputQuotePage();        
          
         //Fill vehicle and customer details
         await input_Page.resetB.waitForDisplayed({ timeout: 15000 });
         await input_Page.tickI.click();
-        await input_Page.dealerDemoDealer2FleetBA.click();
+        await input_Page.dealerFleetBA.click();
         await input_Page.makeModelDD.click();
         await input_Page.makeModelDDVanAnyModel.click();
         await input_Page.regNo1.click();
@@ -399,13 +398,13 @@ describe('Test UAT::', () => {
         
     });
 
-    it('Generate before quote for OTL UAT dealer: Comparison For All', async () => {
+    it.skip('Generate before quote for Comparison For All dealer', async () => {
         await UAT_Page.navigateToInputQuotePage();        
         
         //Fill vehicle and customer details
         await input_Page.resetB.waitForDisplayed({ timeout: 15000 });
         await input_Page.tickI.click();
-        await input_Page.dealerOtlUat.click();
+        await input_Page.dealerComparisonForAll.click();
         await input_Page.regNo1.click();
         await input_Page.regNo2.setValue("autotest27062022generic");
         await input_Page.confirm.click();
@@ -437,13 +436,13 @@ describe('Test UAT::', () => {
         //await details_Page.validateVanVehicleDetail();
     });
 
-    it('Generate after quote for OTL UAT dealer: Comparison For All', async () => {
+    it.skip('Generate after quote for Comparison For All dealer', async () => {
         await UAT_Page.navigateToInputQuotePage();        
         
         //Fill vehicle and customer details
         await input_Page.resetB.waitForDisplayed({ timeout: 15000 });
         await input_Page.tickI.click();
-        await input_Page.dealerOtlUat.click();
+        await input_Page.dealerComparisonForAll.click();
         await input_Page.regNo1.click();
         await input_Page.regNo2.setValue("autotest27062022generic");
         await input_Page.confirm.click();

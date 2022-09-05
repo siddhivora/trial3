@@ -6,11 +6,11 @@ class input_Page{
     get name() { return $("div:nth-of-type(5) > div:nth-of-type(1) > .form-group > .form-control.ng-pristine.ng-untouched.ng-valid");}
     get email() { return $("div:nth-of-type(5) > div:nth-of-type(2) > .form-group > .form-control.ng-pristine.ng-untouched.ng-valid");}
     get phone() { return $(".computer_layout.ng-star-inserted > .col-lg-12.col-md-12.col-xxxl-12 > nb-card > nb-card-body .col-9 > .form-group > .form-control.ng-pristine.ng-untouched.ng-valid");}
-    get dealerOtlUat() { return $("//nb-option[.=' OTL UAT']");}
-    get dealerDemoDealer2FleetBA() { return $("//nb-option[.=' Demo Dealer 2 Fleet B/A']");}
-    get dealerDemoDealerUat() { return $("//nb-option[.=' Demo Dealer UAT']");}
-    get dealerDemoDealer4Estimation() { return $("//nb-option[.=' Demo Dealer 4 Estimation']")};
-    get dealerDemoDealer6Claim() { return $("//nb-option[.=' Demo Dealer 6 Claim']");}
+    get dealerComparisonForAll() { return $("//nb-option[.=' Automation Testing Comparison For All']");}
+    get dealerFleetBA() { return $("//nb-option[.=' Automation Testing Fleet B/A']");}
+    get dealerDemoDealer() { return $("//nb-option[.=' Automation Testing Demo Dealer']");}
+    //get dealerDemoDealer4Estimation() { return $("//nb-option[.=' Demo Dealer 4 Estimation']")};
+    //get dealerDemoDealer6Claim() { return $("//nb-option[.=' Demo Dealer 6 Claim']");}
     ////div[@class='ng-dropdown-panel-items scroll-host']/div/div/span[.='Any Make Any Model']
     get modelCitroenJumpy() { return $("div:nth-of-type(2) > .ng-option-label.ng-star-inserted");}
     get modelCitroenJumper() { return $("div:nth-of-type(3) > .ng-option-label.ng-star-inserted");}
