@@ -21,3 +21,9 @@ jobs:
 
       - run: yarn run wdio-uat
         name: Running E2E tests
+        
+      - uses: actions/upload-artifact@v1
+        if: failure()
+        with:
+          name: logs
+          path: logs
