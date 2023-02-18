@@ -11,7 +11,7 @@ jobs:
     steps:
       # First you need to install a chromium browser in your runner
       - name: Install Chromium
-        run: sudo apt-get install chromium-browser=109.0.5414.74
+        run: sudo apt-get install chromium-browser
 
       # You fetch the current ref
       - uses: actions/checkout@v2
